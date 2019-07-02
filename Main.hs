@@ -157,8 +157,8 @@ nextLevel :: MazeState -> IO MazeState
 nextLevel game = do
   dif <- readTVarIO (dific game)
   let novaDific = dif + 1
-  let c = 5*novaDific
-  let r = 5*novaDific
+  let c = 2*novaDific
+  let r = 2*novaDific
   atomically (writeTVar (dific game) novaDific)
   return (game
           {
